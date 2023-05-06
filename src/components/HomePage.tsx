@@ -1,6 +1,6 @@
 // Library imports
 import { FC, useState } from "react";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 
 // Local imports
 import { auth, googleProvider } from "../config/firebase";
@@ -27,17 +27,6 @@ const HomePage: FC = () => {
     }
   };
 
-  // Handle sign out
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setSignedInUser(auth?.currentUser?.email || "Not Signed In");
-    }
-  };
-
   return (
     <div>
       <p>{signedInUser}</p>
@@ -51,9 +40,6 @@ const HomePage: FC = () => {
         }}
       >
         Sign In With Google
-      </button>
-      <button type="button" onClick={handleSignOut}>
-        Sign Out
       </button>
     </div>
   );
