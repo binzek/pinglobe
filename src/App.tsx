@@ -1,7 +1,15 @@
+// Library imports
 import { FC } from "react";
 
+// Local imports
+import { HomePage } from "./components";
+
 const App: FC = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <HomePage />
+    </div>
+  );
 };
 
 export default App;
