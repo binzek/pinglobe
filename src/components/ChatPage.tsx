@@ -4,6 +4,7 @@ import { signOut } from "firebase/auth";
 
 // Local imports
 import { auth } from "../config/firebase";
+import { NewMessage } from "./";
 
 const ChatPage: FC = () => {
   //State for showing signed in user
@@ -28,6 +29,7 @@ const ChatPage: FC = () => {
       <button type="button" onClick={handleSignOut}>
         Sign Out
       </button>
+      <NewMessage />
     </div>
   );
 };
