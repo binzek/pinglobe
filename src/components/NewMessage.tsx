@@ -1,11 +1,15 @@
 // Library imports
 import { FC, useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { Timestamp, addDoc, collection } from "firebase/firestore";
 
 // Local imports
 import { auth, db } from "../config/firebase";
 
-const NewMessage: FC = () => {
+type Props = {
+  getMessages: () => void;
+};
+
+const NewMessage: FC<Props> = ({ getMessages }) => {
   // State of new message input
   const [newMessage, setNewMessage] = useState("");
 
@@ -18,8 +22,10 @@ const NewMessage: FC = () => {
       await addDoc(collectionRef, {
         message: newMessage,
         userId: auth?.currentUser?.uid,
+        timestamp: Timestamp.now(),
       });
       console.log("New message added");
+      getMessages();
     } catch (err) {
       console.log(err);
     } finally {
