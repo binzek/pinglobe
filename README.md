@@ -1,7 +1,6 @@
-<div style="display:flex; align-items:center; gap:15px; ">
-    <img src="./src/assets/logo.png" height="45px">
-    <h1>Pinglobe</h1>
-</div>
+![Logo](./src/assets/logo.png)
+
+# Pinglobe
 
 Pinglobe is a public chat app that lets you connect with people from all around the world. With Pinglobe, you can join the global conversation in real-time and chat with people from all corners of the globe.
 
