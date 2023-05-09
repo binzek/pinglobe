@@ -2,7 +2,7 @@
 import { FC, useState } from "react";
 
 // Local imports
-import { HomePage, ChatPage } from "./components";
+import { HomePage, ChatPage, HeaderBar } from "./components";
 import { auth } from "./config/firebase";
 
 const App: FC = () => {
@@ -12,7 +12,12 @@ const App: FC = () => {
     setCurrentPage(user ? <ChatPage /> : <HomePage />)
   );
 
-  return <div>{currentPage}</div>;
+  return (
+    <div className="flex min-h-screen flex-col bg-light-palette-offwhite dark:bg-dark-palette-offblack">
+      <HeaderBar />
+      {currentPage}
+    </div>
+  );
 };
 
 export default App;

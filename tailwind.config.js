@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "palette-accent": "#2244CB",
+        "palette-blue": "#2244CB",
         "light-palette-offwhite": "#F7F3F3",
         "light-palette-black": "#050609",
         "light-palette-gray": "#EFE7E7",
