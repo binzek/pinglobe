@@ -13,22 +13,10 @@ const ChatPage: FC = () => {
   );
 
   // Handle sign out
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setSignedInUser(auth?.currentUser?.email || "Not Signed In");
-    }
-  };
 
   return (
     <div>
       <p>{signedInUser}</p>
-      <button type="button" onClick={handleSignOut}>
-        Sign Out
-      </button>
       <Chats />
     </div>
   );
