@@ -15,6 +15,11 @@ export default {
         "dark-palette-gray": "#26272C",
         "dark-palette-black": "#131316",
       },
+      fontFamily: {
+        "yeseva-one": ["Yeseva One", "cursive"],
+        "josefin-sans": ["Josefin Sans", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],
