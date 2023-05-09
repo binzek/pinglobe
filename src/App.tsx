@@ -2,7 +2,7 @@
 import { FC, useState } from "react";
 
 // Local imports
-import { HomePage, ChatPage, HeaderBar } from "./components";
+import { HomePage, ChatPage, HeaderBar, Footer } from "./components";
 import { auth } from "./config/firebase";
 
 const App: FC = () => {
@@ -13,9 +13,10 @@ const App: FC = () => {
   );
 
   return (
-    <div className="flex min-h-screen flex-col bg-light-palette-offwhite dark:bg-dark-palette-offblack">
+    <div className="flex min-h-screen flex-col justify-between bg-light-palette-offwhite dark:bg-dark-palette-offblack">
       <HeaderBar />
       {currentPage}
+      {currentPage.type.name == "HomePage" && <Footer />}
     </div>
   );
 };

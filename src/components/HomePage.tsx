@@ -18,7 +18,7 @@ const HomePage: FC = () => {
 
   return (
     <div>
-      <div className="mx-auto mt-52 text-center">
+      <div className="mx-auto text-center">
         <p className="font-josefin-sans text-2xl font-light text-light-palette-black dark:text-dark-palette-white lg:text-3xl">
           Welcome to
         </p>
