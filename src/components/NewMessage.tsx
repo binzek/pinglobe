@@ -24,6 +24,7 @@ const NewMessage: FC<Props> = ({ getMessages }) => {
         message: newMessage,
         userId: auth?.currentUser?.uid,
         timestamp: Timestamp.now(),
+        imageUrl: auth?.currentUser?.photoURL,
       });
       console.log("New message added");
       getMessages();

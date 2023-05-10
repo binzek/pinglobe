@@ -33,7 +33,7 @@ const Chats: FC = () => {
                 {detailObj.message}
               </p>
               <img
-                src={auth?.currentUser?.photoURL || UserIcon}
+                src={detailObj.imageUrl || UserIcon}
                 alt="User profile picture"
                 className="h-9 rounded-full"
               />
@@ -41,7 +41,7 @@ const Chats: FC = () => {
           ) : (
             <div className="flex items-end gap-1">
               <img
-                src={auth?.currentUser?.photoURL || UserIcon}
+                src={detailObj.imageUrl || UserIcon}
                 alt="User profile picture"
                 className="h-9 rounded-full"
               />
