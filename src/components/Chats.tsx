@@ -25,7 +25,7 @@ const Chats: FC = () => {
 
   return (
     <div>
-      <div className="mx-auto flex w-[96%] flex-col gap-2 lg:w-[97%] xl:w-[98%] 2xl:w-[99%]">
+      <div className="flex flex-col gap-2">
         {messageDetails.map((detailObj) =>
           detailObj.userId === auth.currentUser?.uid ? (
             <div className="flex items-end gap-1">

@@ -1,22 +1,12 @@
 // Library imports
-import { FC, useState } from "react";
-import { signOut } from "firebase/auth";
+import { FC } from "react";
 
 // Local imports
-import { auth } from "../config/firebase";
 import { Chats } from "./";
 
 const ChatPage: FC = () => {
-  //State for showing signed in user
-  const [signedInUser, setSignedInUser] = useState(
-    auth?.currentUser?.email || "Not Signed In"
-  );
-
-  // Handle sign out
-
   return (
-    <div>
-      <p>{signedInUser}</p>
+    <div className="mx-auto mt-3 w-[96%] md:w-2/3 lg:w-1/2 xl:w-1/3">
       <Chats />
     </div>
   );
