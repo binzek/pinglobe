@@ -5,3 +5,7 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.vertical-text {
+  writing-mode: vertical-lr;
+}
