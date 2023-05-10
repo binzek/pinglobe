@@ -1,20 +1,18 @@
 // Library imports
-import { FC, useState } from "react";
+import { FC } from "react";
 import { signInWithPopup } from "firebase/auth";
 
 // Local imports
 import { auth, googleProvider } from "../config/firebase";
 
 const HomePage: FC = () => {
-  //State for showing signed in user
-  const [signedInUser, setSignedInUser] = useState(
-    auth?.currentUser?.email || "Not Signed In"
-  );
-
-  // Checks the sign in status of user
-  auth.onAuthStateChanged((user) =>
-    setSignedInUser(user?.email || "Not Signed In")
-  );
+  const handleSignInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
@@ -28,6 +26,7 @@ const HomePage: FC = () => {
         <button
           type="button"
           className="mt-12 rounded-lg border border-palette-blue px-3 py-1 font-josefin-sans text-lg text-light-palette-black duration-150 hover:bg-palette-blue hover:text-light-palette-white dark:text-dark-palette-white dark:hover:text-dark-palette-white"
+          onClick={handleSignInWithGoogle}
         >
           Sign in with Google
         </button>
