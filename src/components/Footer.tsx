@@ -4,8 +4,7 @@ const Footer: FC = () => {
   let currentYear = new Date().getFullYear();
 
   return (
-    <div className="flex flex-col items-center gap-2 bg-light-palette-gray pt-3 font-inter text-sm text-light-palette-black dark:bg-dark-palette-gray dark:text-dark-palette-white">
-      <p className="font-light">{currentYear} &copy; Abdul Wajid</p>
+    <div className="flex flex-col items-center gap-2 bg-light-palette-gray pb-1 pt-3 font-inter text-sm text-light-palette-black dark:bg-dark-palette-gray dark:text-dark-palette-white">
       <div className="flex gap-4">
         <a href="https://github.com/wajid-nv/pinglobe" target="_blank">
           <span className="material-symbols-rounded font-extralight">code</span>
@@ -21,6 +20,7 @@ const Footer: FC = () => {
           </span>
         </a>
       </div>
+      <p className="font-light">{currentYear} &copy; Abdul Wajid</p>
     </div>
   );
 };
