@@ -4,7 +4,6 @@ import { getDocs, collection, orderBy, query } from "firebase/firestore";
 
 // Local imports
 import { auth, db } from "../config/firebase";
-import { NewMessage } from ".";
 import UserIcon from "../assets/user.png";
 
 const Chats: FC = () => {
@@ -52,7 +51,6 @@ const Chats: FC = () => {
           )
         )}
       </div>
-      <NewMessage getMessages={getMessages} />
     </div>
   );
 };

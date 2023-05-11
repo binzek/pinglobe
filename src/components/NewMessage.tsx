@@ -6,11 +6,7 @@ import TextArea from "react-textarea-autosize";
 // Local imports
 import { auth, db } from "../config/firebase";
 
-type Props = {
-  getMessages: () => void;
-};
-
-const NewMessage: FC<Props> = ({ getMessages }) => {
+const NewMessage: FC = () => {
   // State of new message input
   const [newMessage, setNewMessage] = useState("");
 
@@ -27,7 +23,6 @@ const NewMessage: FC<Props> = ({ getMessages }) => {
         imageUrl: auth?.currentUser?.photoURL,
       });
       console.log("New message added");
-      getMessages();
     } catch (err) {
       console.log(err);
     } finally {
@@ -36,7 +31,7 @@ const NewMessage: FC<Props> = ({ getMessages }) => {
   };
 
   return (
-    <div className="mx-auto flex items-end justify-between gap-2 py-2 font-inter ">
+    <div className="sticky bottom-0 mx-auto flex w-full items-end justify-between gap-2 bg-light-palette-offwhite py-3 font-inter dark:bg-dark-palette-offblack ">
       <TextArea
         name="new-message"
         id="new-message"
