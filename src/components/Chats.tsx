@@ -4,7 +4,8 @@ import { FC, useEffect, useState } from "react";
 // Local imports
 import { auth } from "../config/firebase";
 import UserIcon from "../assets/user.png";
-import { getMessages, messageDetail } from "../utils/utilFns";
+import { getMessages } from "../utils/utilFns";
+import { messageDetail } from "../utils/utilTypes";
 
 const Chats: FC = () => {
   const [messageDetails, setMessageDetails] = useState<messageDetail[]>([]);

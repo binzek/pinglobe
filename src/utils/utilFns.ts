@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 
 import { auth, googleProvider, db } from "../config/firebase";
+import { messageDetail } from "./utilTypes";
 
 export const handleChangeTheme = () => {
   let parentClass = document.getElementsByTagName("html")[0].classList;
@@ -38,16 +39,6 @@ export const handleSignOut = async () => {
   } catch (err) {
     console.log(err);
   }
-};
-
-export type messageDetail = {
-  imageUrl: string;
-  message: string;
-  timestamp: {
-    nanoseconds: number;
-    seconds: number;
-  };
-  userId: string;
 };
 
 export const getMessages = async (
