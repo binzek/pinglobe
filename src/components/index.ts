@@ -1,3 +1,6 @@
+// Exporting all default imports as named imports
+// to access from a single path
+
 export { default as HomePage } from "./HomePage";
 export { default as ChatPage } from "./ChatPage";
 export { default as NewMessage } from "./NewMessage";

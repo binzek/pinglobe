@@ -29,6 +29,8 @@ const HeaderBar: FC = () => {
           className="material-symbols-rounded cursor-pointer text-3xl"
           onClick={handleChangeTheme}
         >
+          {/* Change the icon between dark mode and light mode from
+          google font icons based on <html>'s class list. */}
           {document.getElementsByTagName("html")[0].classList.contains("dark")
             ? "light_mode"
             : "dark_mode"}

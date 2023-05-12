@@ -8,14 +8,21 @@ import { getMessages } from "../utils/utilFns";
 import { messageDetail } from "../utils/utilTypes";
 
 const Chats: FC = () => {
+  // State to store the object comes as messageDetails.
+  // Refer src/utils/utilTypes.ts to know about this object.
   const [messageDetails, setMessageDetails] = useState<messageDetail[]>([]);
 
+  // Execute once when the app mounts
   useEffect(() => {
+    // Function for fetching and showing messages from server.
+    // Refer src/utils/urilFns.ts to know more about the function.
     getMessages(setMessageDetails);
   }, []);
 
   return (
     <div className="flex flex-col gap-2">
+      {/* Show messages by others and messages by current user
+      differntly by applying different styles. */}
       {messageDetails.map((detailObj, index) =>
         detailObj.userId === auth.currentUser?.uid ? (
           <div className="flex items-end gap-1" key={index}>
