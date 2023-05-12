@@ -1,5 +1,5 @@
 // Library imports
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 
 // Local imports
 import { HomePage, ChatPage, HeaderBar, Footer } from "./components";
@@ -11,6 +11,13 @@ const App: FC = () => {
   auth.onAuthStateChanged((user) =>
     setCurrentPage(user ? <ChatPage /> : <HomePage />)
   );
+
+  useEffect(() => {
+    if (!localStorage.getItem("theme")) localStorage.setItem("theme", "light");
+    document
+      .getElementsByTagName("html")[0]
+      .classList.add(localStorage.getItem("theme") || "light");
+  }, []);
 
   return (
     <div className="flex h-screen flex-col justify-between bg-light-palette-offwhite dark:bg-dark-palette-offblack">

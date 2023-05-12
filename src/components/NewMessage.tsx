@@ -1,34 +1,13 @@
 // Library imports
 import { FC, useState } from "react";
-import { Timestamp, addDoc, collection } from "firebase/firestore";
 import TextArea from "react-textarea-autosize";
 
 // Local imports
-import { auth, db } from "../config/firebase";
+import { handleSendNewMessage } from "../utils/utilFns";
 
 const NewMessage: FC = () => {
   // State of new message input
   const [newMessage, setNewMessage] = useState("");
-
-  // Reference of 'messages' collection
-  const collectionRef = collection(db, "/messages");
-
-  // Handle adding new message to db
-  const handleSendNewMessage = async () => {
-    try {
-      await addDoc(collectionRef, {
-        message: newMessage,
-        userId: auth?.currentUser?.uid,
-        timestamp: Timestamp.now(),
-        imageUrl: auth?.currentUser?.photoURL,
-      });
-      console.log("New message added");
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setNewMessage("");
-    }
-  };
 
   return (
     <div className="sticky bottom-0 mx-auto flex w-full items-end justify-between gap-2 bg-light-palette-offwhite py-3 font-inter dark:bg-dark-palette-offblack ">
@@ -45,7 +24,7 @@ const NewMessage: FC = () => {
       <button
         type="button"
         className="flex h-10 w-10 items-center justify-center rounded-lg bg-palette-blue p-2"
-        onClick={handleSendNewMessage}
+        onClick={() => handleSendNewMessage(newMessage, setNewMessage)}
       >
         <span className="material-symbols-rounded text-3xl font-extralight text-light-palette-white dark:text-dark-palette-white">
           done
