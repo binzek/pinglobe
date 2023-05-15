@@ -21,8 +21,17 @@ const Chats: FC = () => {
     onSnapshot(query(collectionRef), () => getMessages(setMessageDetails));
   }, []);
 
+  // Scroll to bottom when each message arrives
+  useEffect(() => {
+    const chats = document.getElementById("chats");
+    if (chats) chats.scrollTop = chats.scrollHeight;
+  }, [messageDetails]);
+
   return (
-    <div className="hide-scrollbar flex flex-col gap-2 overflow-y-scroll">
+    <div
+      id="chats"
+      className="hide-scrollbar flex flex-col gap-2 overflow-y-scroll"
+    >
       {/* Show messages by others and messages by current user
       differntly by applying different styles. */}
       {messageDetails.map((detailObj, index) =>
