@@ -10,6 +10,9 @@ import {
   Timestamp,
 } from "firebase/firestore";
 
+// Reference to the /messages collection in firestore
+export const collectionRef = collection(db, "/messages");
+
 // Local imports
 import { auth, googleProvider, db } from "../config/firebase";
 import { messageDetail } from "./utilTypes";
@@ -56,9 +59,6 @@ export const getMessages = async (
   // Takes a state setter function as argument
   setterFunction: Dispatch<SetStateAction<messageDetail[]>>
 ) => {
-  // Reference to the /messages collection in firestore
-  const collectionRef = collection(db, "/messages");
-
   // Get all documents from the collection in order of time
   const fetchedMessages = await getDocs(
     query(collectionRef, orderBy("timestamp", "asc"))
@@ -81,8 +81,6 @@ export const handleSendNewMessage = async (
   // Second is the state setter function to render it on screen
   setNewMessage: Dispatch<SetStateAction<string>>
 ) => {
-  // Reference to the /messages collection in firestore
-  const collectionRef = collection(db, "/messages");
   try {
     // Add document to firestore collection
     await addDoc(collectionRef, {

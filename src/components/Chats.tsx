@@ -1,10 +1,11 @@
 // Library imports
 import { FC, useEffect, useState } from "react";
+import { onSnapshot, query } from "firebase/firestore";
 
 // Local imports
 import { auth } from "../config/firebase";
 import UserIcon from "../assets/user.png";
-import { getMessages } from "../utils/utilFns";
+import { collectionRef, getMessages } from "../utils/utilFns";
 import { messageDetail } from "../utils/utilTypes";
 
 const Chats: FC = () => {
@@ -15,8 +16,9 @@ const Chats: FC = () => {
   // Execute once when the app mounts
   useEffect(() => {
     // Function for fetching and showing messages from server.
-    // Refer src/utils/urilFns.ts to know more about the function.
-    getMessages(setMessageDetails);
+    // Refer src/utils/utilFns.ts to know more about the function.
+    // Executes on every change in backend
+    onSnapshot(query(collectionRef), () => getMessages(setMessageDetails));
   }, []);
 
   return (
