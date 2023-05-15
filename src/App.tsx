@@ -27,7 +27,7 @@ const App: FC = () => {
   }, []);
 
   return (
-    <div className="flex h-screen flex-col justify-between bg-light-palette-offwhite dark:bg-dark-palette-offblack">
+    <div className="flex min-h-screen flex-col justify-between bg-light-palette-offwhite dark:bg-dark-palette-offblack">
       <HeaderBar />
       {currentPage}
       <Footer />

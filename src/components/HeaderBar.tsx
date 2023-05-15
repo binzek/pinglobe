@@ -12,7 +12,7 @@ import {
 
 const HeaderBar: FC = () => {
   return (
-    <div className="mx-auto mt-2 flex w-[96%] select-none items-center justify-between rounded-lg bg-palette-blue bg-opacity-25 px-2 py-1 dark:bg-opacity-20 md:mt-3 lg:w-[97%] lg:px-4 xl:mt-2 xl:w-[98%] 2xl:w-[99%]">
+    <div className="fixed left-1/2 mt-2 flex w-[96%] -translate-x-1/2 select-none items-center justify-between rounded-lg bg-palette-blue bg-opacity-25 px-2 py-1 dark:bg-opacity-20 md:mt-3 lg:w-[97%] lg:px-4 xl:mt-2 xl:w-[98%] 2xl:w-[99%]">
       <img
         src={Logo}
         alt="Pinglobe logo, ie. two blue chat bubbles"

@@ -10,7 +10,7 @@ const NewMessage: FC = () => {
   const [newMessage, setNewMessage] = useState("");
 
   return (
-    <div className="sticky bottom-0 mx-auto flex w-full items-end justify-between gap-2 bg-light-palette-offwhite py-3 font-inter dark:bg-dark-palette-offblack ">
+    <div className="mt-auto flex justify-between gap-2 font-inter">
       <TextArea
         name="new-message"
         id="new-message"

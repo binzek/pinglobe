@@ -6,7 +6,7 @@ import { handleSignInWithGoogle } from "../utils/utilFns";
 
 const HomePage: FC = () => {
   return (
-    <div className="mx-auto text-center">
+    <div className="mx-auto my-auto text-center">
       <p className="font-josefin-sans text-2xl font-light text-light-palette-black dark:text-dark-palette-white lg:text-3xl">
         Welcome to
       </p>

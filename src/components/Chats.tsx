@@ -22,7 +22,7 @@ const Chats: FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="hide-scrollbar flex flex-col gap-2 overflow-y-scroll">
       {/* Show messages by others and messages by current user
       differntly by applying different styles. */}
       {messageDetails.map((detailObj, index) =>
