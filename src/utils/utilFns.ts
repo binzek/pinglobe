@@ -8,6 +8,8 @@ import {
   query,
   addDoc,
   Timestamp,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 
 // Reference to the /messages collection in firestore
@@ -68,6 +70,10 @@ export const getMessages = async (
   let messageDetails = fetchedMessages.docs.map(
     (doc) => doc.data() as messageDetail
   );
+
+  if (messageDetails.length > 100) {
+    await deleteDoc(doc(db, "/messages", fetchedMessages.docs[0].id));
+  }
 
   // Set the specific data to to the state of element to render
   setterFunction(messageDetails);
