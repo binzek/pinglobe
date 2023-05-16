@@ -43,7 +43,7 @@ export const handleSignInWithGoogle = async () => {
     // Prompts a popup for google sign in
     await signInWithPopup(auth, googleProvider);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -52,7 +52,7 @@ export const handleSignOut = async () => {
   try {
     await signOut(auth);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -99,9 +99,8 @@ export const handleSendNewMessage = async (
       // URL of the profile pic of sender
       imageUrl: auth?.currentUser?.photoURL,
     });
-    console.log("New message added");
   } catch (err) {
-    console.log(err);
+    console.error(err);
   } finally {
     setNewMessage("");
   }
