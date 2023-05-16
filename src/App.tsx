@@ -1,5 +1,5 @@
 // Library imports
-import { FC, useState, useEffect, Dispatch } from "react";
+import { FC, useState, useEffect } from "react";
 
 // Local imports
 import { HomePage, ChatPage, HeaderBar, Footer } from "./components";
