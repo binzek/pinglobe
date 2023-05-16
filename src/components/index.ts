@@ -7,3 +7,4 @@ export { default as NewMessage } from "./NewMessage";
 export { default as Chats } from "./Chats";
 export { default as HeaderBar } from "./HeaderBar";
 export { default as Footer } from "./Footer";
+export { default as WelcomeModal } from "./WelcomeModal";
