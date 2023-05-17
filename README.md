@@ -17,7 +17,7 @@ Pinglobe is a public chat app that lets you connect with people from all around 
 ```
 $ git clone https://github.com/wajid-nv/pinglobe.git
 
-$ cd taskikko
+$ cd pinglobe
 
 $ npm install
 ```
