@@ -6,7 +6,7 @@ Pinglobe is a public chat app that lets you connect with people from all around 
 
 ## To Use
 
-- Go to [Pinglobe web](https://pinglobe.wajid.me/)
+- Go to [Pinglobe web](https://pinglobe.live.binzek.com/)
 - Click **_Sign in with Google_** button
 - And chat 🎉
 
@@ -27,7 +27,7 @@ $ npm install
 - Enable [Google sign in](https://firebase.google.com/docs/auth/web/google-signin)
 - Create new [firestore database](https://firebase.google.com/docs/firestore)
 - Get your `firebaseConfig` from firebase project settings
-- Replace it with `firebaseConfig` object in [`/src/config/firebase.ts`](https://github.com/wajid-nv/pinglobe/blob/main/src/config/firebase.ts)
+- Replace it with `firebaseConfig` object in [`/src/config/firebase.ts`](/src/config/firebase.ts)
 - Run locally with `$ npm run dev`
 - Make your own tweaks
 - Commit to Git
@@ -50,4 +50,4 @@ _Note: if you're deploying on other providers than firebase, or if you are using
 
 ## License
 
-Distributed under the [MIT License](https://opensource.org/license/mit/). See [`LICENSE`](https://github.com/wajid-nv/pinglobe/blob/main/LICENSE) for more information.
+Distributed under the [MIT License](https://opensource.org/license/mit/). See [`LICENSE`](/LICENSE) for more information.
